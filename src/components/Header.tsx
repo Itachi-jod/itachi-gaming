@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Gamepad } from 'lucide-react';
+import { Menu, X, Code } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,7 +11,7 @@ const Header = () => {
   };
 
   const handleJoinNow = () => {
-    alert('Welcome to Itachi Gaming Nexus! Registration feature coming soon!');
+    alert('Welcome to Code Nexus! Registration feature coming soon!');
   };
 
   const scrollToSection = (sectionId: string) => {
@@ -29,18 +29,18 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <div className="relative">
-              <Gamepad className="w-8 h-8 text-primary sharingan-spin" />
+              <Code className="w-8 h-8 text-primary sharingan-spin" />
               <div className="absolute inset-0 w-8 h-8 bg-primary/20 rounded-full blur-md"></div>
             </div>
-            <h1 className="text-2xl font-bold text-gradient">Itachi Gaming Nexus</h1>
+            <h1 className="text-2xl font-bold text-gradient">Code Nexus</h1>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <button onClick={() => scrollToSection('games')} className="text-foreground hover:text-primary transition-colors duration-300">Games</button>
-            <button onClick={() => scrollToSection('social')} className="text-foreground hover:text-primary transition-colors duration-300">Social</button>
-            <button onClick={() => scrollToSection('tournaments')} className="text-foreground hover:text-primary transition-colors duration-300">Tournaments</button>
-            <button onClick={() => scrollToSection('community')} className="text-foreground hover:text-primary transition-colors duration-300">Community</button>
+            <button onClick={() => scrollToSection('coding')} className="text-foreground hover:text-primary transition-colors duration-300">Learn</button>
+            <button onClick={() => scrollToSection('social')} className="text-foreground hover:text-primary transition-colors duration-300">Community</button>
+            <button onClick={() => scrollToSection('projects')} className="text-foreground hover:text-primary transition-colors duration-300">Projects</button>
+            <button onClick={() => scrollToSection('challenges')} className="text-foreground hover:text-primary transition-colors duration-300">Challenges</button>
             <Button onClick={handleJoinNow} className="flame-gradient text-white font-semibold px-6 py-2 rounded-lg ninja-glow hover:scale-105 transition-transform duration-300">
               Join Now
             </Button>
@@ -61,10 +61,10 @@ const Header = () => {
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 border-t border-border">
             <div className="flex flex-col space-y-4 mt-4">
-              <button onClick={() => scrollToSection('games')} className="text-foreground hover:text-primary transition-colors duration-300 text-left">Games</button>
-              <button onClick={() => scrollToSection('social')} className="text-foreground hover:text-primary transition-colors duration-300 text-left">Social</button>
-              <button onClick={() => scrollToSection('tournaments')} className="text-foreground hover:text-primary transition-colors duration-300 text-left">Tournaments</button>
-              <button onClick={() => scrollToSection('community')} className="text-foreground hover:text-primary transition-colors duration-300 text-left">Community</button>
+              <button onClick={() => scrollToSection('coding')} className="text-foreground hover:text-primary transition-colors duration-300 text-left">Learn</button>
+              <button onClick={() => scrollToSection('social')} className="text-foreground hover:text-primary transition-colors duration-300 text-left">Community</button>
+              <button onClick={() => scrollToSection('projects')} className="text-foreground hover:text-primary transition-colors duration-300 text-left">Projects</button>
+              <button onClick={() => scrollToSection('challenges')} className="text-foreground hover:text-primary transition-colors duration-300 text-left">Challenges</button>
               <Button onClick={handleJoinNow} className="flame-gradient text-white font-semibold w-full">
                 Join Now
               </Button>

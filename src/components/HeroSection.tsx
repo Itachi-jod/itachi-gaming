@@ -1,16 +1,16 @@
 
 import { Button } from '@/components/ui/button';
-import { Gamepad, Users, Trophy } from 'lucide-react';
+import { Code, Users, Trophy } from 'lucide-react';
 
 const HeroSection = () => {
-  const handleStartGaming = () => {
-    const gamesSection = document.getElementById('games');
-    if (gamesSection) {
-      gamesSection.scrollIntoView({ behavior: 'smooth' });
+  const handleStartCoding = () => {
+    const codingSection = document.getElementById('coding');
+    if (codingSection) {
+      codingSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
-  const handleExploreSocial = () => {
+  const handleExploreCommunity = () => {
     const socialSection = document.getElementById('social');
     if (socialSection) {
       socialSection.scrollIntoView({ behavior: 'smooth' });
@@ -30,39 +30,39 @@ const HeroSection = () => {
         <div className="max-w-4xl mx-auto">
           {/* Main Heading */}
           <h1 className="text-6xl md:text-8xl font-bold mb-6">
-            <span className="text-gradient">Gaming</span>
+            <span className="text-gradient">Code</span>
             <br />
             <span className="text-foreground">Nexus</span>
           </h1>
 
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Enter the realm where legends are born. Experience the ultimate gaming universe crafted by Lord Itachi.
+            Master the art of programming. Connect with developers worldwide and build the future with code.
           </p>
 
           {/* Stats */}
           <div className="flex flex-wrap justify-center gap-8 mb-12">
             <div className="flex items-center space-x-2 bg-card/50 px-6 py-3 rounded-lg ninja-glow">
-              <Gamepad className="w-6 h-6 text-primary" />
-              <span className="text-lg font-semibold">500+ Games</span>
+              <Code className="w-6 h-6 text-primary" />
+              <span className="text-lg font-semibold">500+ Tutorials</span>
             </div>
             <div className="flex items-center space-x-2 bg-card/50 px-6 py-3 rounded-lg ninja-glow">
               <Users className="w-6 h-6 text-primary" />
-              <span className="text-lg font-semibold">1M+ Players</span>
+              <span className="text-lg font-semibold">100K+ Developers</span>
             </div>
             <div className="flex items-center space-x-2 bg-card/50 px-6 py-3 rounded-lg ninja-glow">
               <Trophy className="w-6 h-6 text-primary" />
-              <span className="text-lg font-semibold">Daily Tournaments</span>
+              <span className="text-lg font-semibold">Daily Challenges</span>
             </div>
           </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button onClick={handleStartGaming} className="flame-gradient text-white font-bold px-8 py-4 text-lg rounded-lg ninja-glow hover:scale-105 transition-transform duration-300">
-              Start Gaming
+            <Button onClick={handleStartCoding} className="flame-gradient text-white font-bold px-8 py-4 text-lg rounded-lg ninja-glow hover:scale-105 transition-transform duration-300">
+              Start Coding
             </Button>
-            <Button onClick={handleExploreSocial} variant="outline" className="border-gradient text-foreground font-bold px-8 py-4 text-lg rounded-lg hover:bg-card/50 transition-all duration-300">
-              Explore Social
+            <Button onClick={handleExploreCommunity} variant="outline" className="border-gradient text-foreground font-bold px-8 py-4 text-lg rounded-lg hover:bg-card/50 transition-all duration-300">
+              Join Community
             </Button>
           </div>
         </div>
