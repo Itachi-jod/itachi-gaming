@@ -10,6 +10,18 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleJoinNow = () => {
+    alert('Welcome to Itachi Gaming Nexus! Registration feature coming soon!');
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4 py-4">
@@ -25,11 +37,11 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#games" className="text-foreground hover:text-primary transition-colors duration-300">Games</a>
-            <a href="#social" className="text-foreground hover:text-primary transition-colors duration-300">Social</a>
-            <a href="#tournaments" className="text-foreground hover:text-primary transition-colors duration-300">Tournaments</a>
-            <a href="#community" className="text-foreground hover:text-primary transition-colors duration-300">Community</a>
-            <Button className="flame-gradient text-white font-semibold px-6 py-2 rounded-lg ninja-glow hover:scale-105 transition-transform duration-300">
+            <button onClick={() => scrollToSection('games')} className="text-foreground hover:text-primary transition-colors duration-300">Games</button>
+            <button onClick={() => scrollToSection('social')} className="text-foreground hover:text-primary transition-colors duration-300">Social</button>
+            <button onClick={() => scrollToSection('tournaments')} className="text-foreground hover:text-primary transition-colors duration-300">Tournaments</button>
+            <button onClick={() => scrollToSection('community')} className="text-foreground hover:text-primary transition-colors duration-300">Community</button>
+            <Button onClick={handleJoinNow} className="flame-gradient text-white font-semibold px-6 py-2 rounded-lg ninja-glow hover:scale-105 transition-transform duration-300">
               Join Now
             </Button>
           </nav>
@@ -49,11 +61,11 @@ const Header = () => {
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 border-t border-border">
             <div className="flex flex-col space-y-4 mt-4">
-              <a href="#games" className="text-foreground hover:text-primary transition-colors duration-300">Games</a>
-              <a href="#social" className="text-foreground hover:text-primary transition-colors duration-300">Social</a>
-              <a href="#tournaments" className="text-foreground hover:text-primary transition-colors duration-300">Tournaments</a>
-              <a href="#community" className="text-foreground hover:text-primary transition-colors duration-300">Community</a>
-              <Button className="flame-gradient text-white font-semibold w-full">
+              <button onClick={() => scrollToSection('games')} className="text-foreground hover:text-primary transition-colors duration-300 text-left">Games</button>
+              <button onClick={() => scrollToSection('social')} className="text-foreground hover:text-primary transition-colors duration-300 text-left">Social</button>
+              <button onClick={() => scrollToSection('tournaments')} className="text-foreground hover:text-primary transition-colors duration-300 text-left">Tournaments</button>
+              <button onClick={() => scrollToSection('community')} className="text-foreground hover:text-primary transition-colors duration-300 text-left">Community</button>
+              <Button onClick={handleJoinNow} className="flame-gradient text-white font-semibold w-full">
                 Join Now
               </Button>
             </div>

@@ -3,6 +3,20 @@ import { Button } from '@/components/ui/button';
 import { Gamepad, Users, Trophy } from 'lucide-react';
 
 const HeroSection = () => {
+  const handleStartGaming = () => {
+    const gamesSection = document.getElementById('games');
+    if (gamesSection) {
+      gamesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleExploreSocial = () => {
+    const socialSection = document.getElementById('social');
+    if (socialSection) {
+      socialSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Background Elements */}
@@ -44,10 +58,10 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="flame-gradient text-white font-bold px-8 py-4 text-lg rounded-lg ninja-glow hover:scale-105 transition-transform duration-300">
+            <Button onClick={handleStartGaming} className="flame-gradient text-white font-bold px-8 py-4 text-lg rounded-lg ninja-glow hover:scale-105 transition-transform duration-300">
               Start Gaming
             </Button>
-            <Button variant="outline" className="border-gradient text-foreground font-bold px-8 py-4 text-lg rounded-lg hover:bg-card/50 transition-all duration-300">
+            <Button onClick={handleExploreSocial} variant="outline" className="border-gradient text-foreground font-bold px-8 py-4 text-lg rounded-lg hover:bg-card/50 transition-all duration-300">
               Explore Social
             </Button>
           </div>

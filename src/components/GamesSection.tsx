@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Gamepad } from 'lucide-react';
@@ -43,6 +42,13 @@ const GamesSection = () => {
     }
   ];
 
+  const scrollToPlayableGames = () => {
+    const playableSection = document.getElementById('playable-games');
+    if (playableSection) {
+      playableSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="games" className="py-20 bg-gradient-to-b from-background to-muted/20">
       <div className="container mx-auto px-4">
@@ -53,6 +59,22 @@ const GamesSection = () => {
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Discover an endless collection of games across every genre. From intense battles to peaceful puzzles.
           </p>
+        </div>
+
+        {/* Playable Games CTA */}
+        <div className="text-center mb-12">
+          <div className="bg-gradient-to-r from-primary/20 to-accent/20 p-8 rounded-lg border-gradient mb-8">
+            <h3 className="text-3xl font-bold text-gradient mb-4">🎮 Play Right Now!</h3>
+            <p className="text-lg text-muted-foreground mb-6">
+              Don't just browse - play actual games! We have ninja-themed games ready for you.
+            </p>
+            <Button 
+              onClick={scrollToPlayableGames}
+              className="flame-gradient text-white font-bold px-8 py-4 text-lg ninja-glow hover:scale-105 transition-transform duration-300"
+            >
+              Play Games Now
+            </Button>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
